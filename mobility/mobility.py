@@ -35,7 +35,7 @@ clean_up -> cleans up the GPIOs. Should be done when the robot is not in use
 
 setup -> sets the pins up to OUTPUT mode to control the motors.
 
-reset_pins -> resets the pins to a new GPIO set 
+reset_pins -> resets the pins to a new GPIO set
 '''
 
 class Mobility():
@@ -89,6 +89,6 @@ class Mobility():
         self.clean_up()
 
         self.l_forward = new_l_for
-        self.r_forward - new_r_for
+        self.r_forward = new_r_for
         self.l_reverse = new_l_rev
         self.r_reverse = new_r_rev
