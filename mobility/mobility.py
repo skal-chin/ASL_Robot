@@ -79,6 +79,7 @@ class Mobility():
 
     def setup(self):
         self.is_set = True
+        GPIO.setmode(GPIO.BOARD)
 
         GPIO.setup(self.l_forward, GPIO.OUT)
         GPIO.setup(self.r_forward, GPIO.OUT)
@@ -87,6 +88,7 @@ class Mobility():
 
     def reset_pins(self, new_l_for, new_r_for, new_l_rev, new_r_rev):
         self.clean_up()
+        GPIO.setmode(GPIO.BOARD)
 
         self.l_forward = new_l_for
         self.r_forward = new_r_for
