@@ -31,6 +31,8 @@ turn_right -> turns the robot 90 degrees to the right, -pi/2
 
 turn_left -> turns the robot 90 degrees to the left, pi/2
 
+motor_test -> tests each motor individually
+
 clean_up -> cleans up the GPIOs. Should be done when the robot is not in use
 
 setup -> sets the pins up to OUTPUT mode to control the motors.
@@ -49,7 +51,7 @@ class Mobility():
 
         self.setup()
 
-    def forward(self, dur):
+    def forward(self, dur=2):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.r_forward, GPIO.HIGH)
 
@@ -58,7 +60,7 @@ class Mobility():
         GPIO.output(self.l_forward, GPIO.LOW)
         GPIO.output(slef.r_forward, GPIO.LOW)
 
-    def backward(self, dur):
+    def backward(self, dur=2):
         GPIO.output(self.l_reverse, GPIO.HIGH)
         GPIO.output(self.r_reverse, GPIO.HIGH)
 
@@ -72,6 +74,23 @@ class Mobility():
 
     def turn_left(self):
         pass
+
+    def motor_test(dur=1):
+        GPIO.output(self.l_forward, GPIO.HIGH)
+        sleep(dur)
+        GPIO.output(self.l_forward, GPIO.LOW)
+
+        GPIO.output(self.r_forward, GPIO.HIGH)
+        sleep(dur)
+        GPIO.OUTPUT(self.r_forward, GPIO.LOW)
+
+        GPIO.output(self.l_reverse, GPIO.HIGH)
+        sleep(dur)
+        GPIO.output(self.l_reverse, GPIO.LOW)
+
+        GPIO.output(self.r_reverse, GPIO.HIGH)
+        sleep(dur)
+        GPIO.output(self.r_reverse, GPIO.LOW)
 
     def clean_up(self):
         self.is_set = False

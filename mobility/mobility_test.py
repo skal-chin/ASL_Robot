@@ -1,16 +1,30 @@
 from mobility import Mobility
+import sys
 
 def usage():
     print('''
+        \' COMMAND DURATION=optional \'
+
+        test -> Test each motor
+        x -> exit
         f -> Move bot forward
         b -> Move bot backward
+
         ''')
 
 def run_command(bot, command, duration=None):
     if duration == None:
         duration = 2
 
-    if command == 'f':
+    if command == 'test':
+        bot.motor_test(duration)
+
+    elif command == 'x':
+        print('Exiting...')
+        sys.exit(0)
+
+
+    elif command == 'f':
         bot.forward(duration)
 
     elif command == 'b':
@@ -34,8 +48,13 @@ def main():
     usage()
     while True:
 
-        command = input('Enter command: ')
-        print(command)
+        command = list(input('Enter command: '))
+
+        if len(command) == 1:
+            run_command(mobile_bot, command[0])
+
+        elif len(command) == 2:
+            run_command(mobile_bot, command[0], command[1])
 
 
 
