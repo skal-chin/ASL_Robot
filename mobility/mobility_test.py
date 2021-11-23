@@ -9,6 +9,9 @@ def usage():
         x -> exit
         f -> Move bot forward
         b -> Move bot backward
+        l -> Spin left
+        r -> Spin right
+        test -> Run test motor commmand
 
         ''')
 
@@ -30,6 +33,12 @@ def run_command(bot, command, duration=None):
     elif command == 'b':
         bot.backward(duration)
 
+    elif command == 'l':
+        bot.turn_left(duration)
+
+    elif command == 'r':
+        bot.turn_right(duration)
+        
     else:
         print('Unrecognized command')
         usage()
@@ -38,12 +47,14 @@ def run_command(bot, command, duration=None):
 
 
 def main():
-    left_forward = 3
-    left_reverse = 5
-    right_forward = 8
-    right_reverse = 10
+    left_forward = 20
+    left_reverse = 21
+    left_velocity = 16
+    right_forward = 19
+    right_reverse = 26
+    right_velocity = 13
 
-    mobile_bot = Mobility(left_forward, right_forward, left_reverse, right_reverse)
+    mobile_bot = Mobility(left_forward, right_forward, left_reverse, right_reverse, left_velocity, right_velocity)
 
     usage()
     while True:
