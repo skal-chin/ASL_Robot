@@ -10,7 +10,7 @@ This is a college course robotics project. Its purpose is to learn more about ro
 
 Contains the Mobility class that controls the hardcoded movements of the bot.
 
-**Parameters**
+**Parameters**  
 `l_forward` &rarr; The pin number that controls the left forward motor  
 `r_forward` &rarr; The pin number that controls the right forward motor  
 `l_reverse` &rarr; The pin number that controls the left reverse motor  
