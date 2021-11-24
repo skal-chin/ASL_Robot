@@ -23,6 +23,7 @@ def run_command(bot, command, duration=None):
         bot.motor_test(duration)
 
     elif command == 'x':
+        bot.clean_up()
         print('Exiting...')
         sys.exit(0)
 
@@ -38,7 +39,7 @@ def run_command(bot, command, duration=None):
 
     elif command == 'r':
         bot.turn_right(duration)
-        
+
     else:
         print('Unrecognized command')
         usage()
