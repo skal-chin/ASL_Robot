@@ -58,8 +58,8 @@ class Mobility():
         GPIO.setup(self.r_forward, GPIO.OUT)
         GPIO.setup(self.l_reverse, GPIO.OUT)
         GPIO.setup(self.r_reverse, GPIO.OUT)
-        GPIO.setup(self.l_velocity, GPIO.OUT)
-        GPIO.setup(self.r_velocity, GPIO.OUT)
+        GPIO.setup(self.l_velocity, GPIO.OUT, initial=GPIO.HIGH)
+        GPIO.setup(self.r_velocity, GPIO.OUT, initial=GPIO.HIGH)
 
         self.l_pwm = GPIO.PWM(self.l_velocity, 200)
         self.r_pwm = GPIO.PWM(self.r_velocity, 200)
