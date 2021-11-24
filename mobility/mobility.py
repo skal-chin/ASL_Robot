@@ -68,15 +68,15 @@ class Mobility():
         self.r_pwm.start(0)
 
     def forward(self, dur=2, freq=50):
-        GPIO.OUTPUT(self.l_forward, GPIO.HIGH)
-        GPIO.OUTPUT(self.r_forward, GPIO.HIGH)
+        GPIO.output(self.l_forward, GPIO.HIGH)
+        GPIO.output(self.r_forward, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(freq)
         self.r_pwm.ChangeDutyCycle(freq)
 
         sleep(dur)
 
-        GPIO.OUTPUT(self.l_forward, GPIO.LOW)
-        GPIO.OUTPUT(self.r_forward, GPIO.LOW)
+        GPIO.output(self.l_forward, GPIO.LOW)
+        GPIO.output(self.r_forward, GPIO.LOW)
         self.l_pwm.ChangeDutyCycle(0)
         self.r_pwm.ChangeDutyCycle(0)
 
@@ -85,15 +85,15 @@ class Mobility():
 
 
     def turn_right(self, dur=2, freq=50):
-        GPIO.OUTPUT(self.l_forward, GPIO.HIGH)
-        GPIO.OUTPUT(self.r_reverse, GPIO.HIGH)
+        GPIO.output(self.l_forward, GPIO.HIGH)
+        GPIO.output(self.r_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(freq)
         self.r_pwm.ChangeDutyCycle(freq)
 
         sleep(dur)
 
-        GPIO.OUTPUT(self.l_forward, GPIO.LOW)
-        GPIO.OUTPUT(self.r_forward, GPIO.LOW)
+        GPIO.output(self.l_forward, GPIO.LOW)
+        GPIO.output(self.r_forward, GPIO.LOW)
         self.l_pwm.ChangeDutyCycle(0)
         self.r_pwm.ChangeDutyCycle(0)
 
@@ -101,28 +101,28 @@ class Mobility():
         pass
 
     def motor_test(dur=1):
-        GPIO.OUTPUT(self.l_forward, GPIO.HIGH)
+        GPIO.output(self.l_forward, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(20)
         sleep(dur)
-        GPIO.OUTPUT(self.l_forward, GPIO.LOW)
+        GPIO.output(self.l_forward, GPIO.LOW)
         self.l_pwm.ChangeDutyCycle(0)
 
-        GPIO.OUTPUT(self.r_forward, GPIO.HIGH)
+        GPIO.output(self.r_forward, GPIO.HIGH)
         self.r_pwm.ChangeDutyCycle(20)
         sleep(dur)
-        GPIO.OUTPUT(self.r_forward, GPIO.LOW)
+        GPIO.output(self.r_forward, GPIO.LOW)
         self.r_pwm.ChangeDutyCycle(20)
 
-        GPIO.OUTPUT(self.l_reverse, GPIO.HIGH)
+        GPIO.output(self.l_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(20)
         sleep(dur)
-        GPIO.OUTPUT(self.l_reverse, GPIO.LOW)
+        GPIO.output(self.l_reverse, GPIO.LOW)
         self.l_pwm.ChangeDutyCycle(0)
 
-        GPIO.OUTPUT(self.r_reverse, GPIO.HIGH)
+        GPIO.output(self.r_reverse, GPIO.HIGH)
         self.r_pwm.ChangeDutyCycle(20)
         sleep(dur)
-        GPIO.OUTPUT(self.r_reverse, GPIO.LOW)
+        GPIO.output(self.r_reverse, GPIO.LOW)
         self.r_pwm.ChangeDutyCycle(0)
 
     def clean_up(self):
