@@ -67,13 +67,11 @@ class Mobility():
         self.l_pwm.start(0)
         self.r_pwm.start(0)
 
-    def forward(self, dur=2, freq=50):
+    def forward(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.HIGH)
-        GPIO.output(self.l_reverse, GPIO.LOW)
         GPIO.output(self.r_forward, GPIO.HIGH)
-        GPIO.output(self.r_reverse, GPIO.LOW)
-        self.l_pwm.ChangeDutyCycle(freq)
-        self.r_pwm.ChangeDutyCycle(freq)
+        self.l_pwm.ChangeDutyCycle(duty)
+        self.r_pwm.ChangeDutyCycle(duty)
 
         sleep(dur)
 
@@ -82,15 +80,15 @@ class Mobility():
         self.l_pwm.ChangeDutyCycle(0)
         self.r_pwm.ChangeDutyCycle(0)
 
-    def backward(self, dur=2, freq=50):
+    def backward(self, dur=2, duty=50):
         pass
 
 
-    def turn_right(self, dur=2, freq=50):
+    def turn_right(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.r_reverse, GPIO.HIGH)
-        self.l_pwm.ChangeDutyCycle(freq)
-        self.r_pwm.ChangeDutyCycle(freq)
+        self.l_pwm.ChangeDutyCycle(duty)
+        self.r_pwm.ChangeDutyCycle(duty)
 
         sleep(dur)
 
@@ -135,7 +133,7 @@ class Mobility():
 
     def reset_pins(self, new_l_for, new_r_for, new_l_rev, new_r_rev, new_l_vel, new_r_vel):
         self.clean_up()
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BCM)
 
         self.l_forward = new_l_for
         self.r_forward = new_r_for
