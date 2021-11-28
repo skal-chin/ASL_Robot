@@ -92,7 +92,7 @@ class Mobility():
         self.l_pwm.ChangeDutyCycle(50)
         self.r_pwm.ChangeDutyCycle(50)
 
-        sleep(.5)
+        sleep(.75)
 
         GPIO.output(self.l_forward, GPIO.LOW)
         GPIO.output(self.r_reverse, GPIO.LOW)
