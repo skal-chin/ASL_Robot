@@ -84,7 +84,7 @@ class Mobility():
         pass
 
 
-    def turn_right(self, dur=.4, duty=45):
+    def turn_right(self, dur=.1, duty=45):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.r_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(duty)
