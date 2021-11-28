@@ -69,7 +69,7 @@ class Mobility():
 
     def forward(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.HIGH)
-        GPIO.output)self.l_reverse, GPIO.LOW)
+        GPIO.output(self.l_reverse, GPIO.LOW)
         GPIO.output(self.r_forward, GPIO.HIGH)
         GPIO.output(slef.r_reverse, GPIO.LOW)
         self.l_pwm.ChangeDutyCycle(duty)
