@@ -84,7 +84,7 @@ class Mobility():
         pass
 
 
-    def turn_right(self, dur=2, duty=10):
+    def turn_right(self, dur=2, duty=20):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.r_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(duty)
@@ -129,7 +129,7 @@ class Mobility():
         self.is_set = False
         self.l_pwm.stop()
         self.r_pwm.stop()
-        GPIO.clean_up()
+        GPIO.cleanup()
 
     def reset_pins(self, new_l_for, new_r_for, new_l_rev, new_r_rev, new_l_vel, new_r_vel):
         self.clean_up()
