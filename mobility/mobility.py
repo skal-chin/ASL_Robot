@@ -29,7 +29,7 @@ Functions
 -----------
 forward -> moves the robot forward for a set amount of time (dur)
 
-backward -> moves the robot backward for a set amount of time
+backward -> moves the robot backward for a set amount of time (dur)
 
 turn_right -> turns the robot 90 degrees to the right, -pi/2
 
