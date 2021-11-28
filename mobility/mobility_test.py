@@ -16,11 +16,12 @@ def usage():
         ''')
 
 def run_command(bot, command, duration=None):
-    if duration == None:
-        duration = 2
 
     if command == 'test':
-        bot.motor_test(duration)
+        if duration == None:
+            bot.motor_test()
+        else:
+            bot.motor_test(duration)
 
     elif command == 'x':
         bot.clean_up()
@@ -29,16 +30,22 @@ def run_command(bot, command, duration=None):
 
 
     elif command == 'f':
-        bot.forward(duration)
+        if duration == None:
+            bot.forward()
+        else:
+            bot.forward(duration)
 
     elif command == 'b':
-        bot.backward(duration)
+        if duration == None:
+            bot.backward()
+        else:
+            bot.backward(duration)
 
     elif command == 'l':
-        bot.turn_left(duration)
-
+        bot.turn_left()
+        
     elif command == 'r':
-        bot.turn_right(duration)
+        bot.turn_right()
 
     else:
         print('Unrecognized command')
