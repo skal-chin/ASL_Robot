@@ -86,6 +86,8 @@ class Mobility():
 
     def turn_right(self, dur=0.2, duty=30):
         GPIO.output(self.l_forward, GPIO.HIGH)
+        GPIO.output(self.l_reverse, GPIO.LOW)
+        GPIO.output(self.r_forward, GPIO.LOW)
         GPIO.output(self.r_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(duty)
         self.r_pwm.ChangeDutyCycle(duty)
@@ -93,7 +95,7 @@ class Mobility():
         sleep(dur)
 
         GPIO.output(self.l_forward, GPIO.LOW)
-        GPIO.output(self.r_forward, GPIO.LOW)
+        GPIO.output(self.r_reverse, GPIO.LOW)
 
     def turn_left(self):
         pass
