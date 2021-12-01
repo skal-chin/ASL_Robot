@@ -26,6 +26,7 @@ Contains the Mobility class that controls the hardcoded movements of the bot wit
 `go_right` &rarr; Moves the bot to the right  
 `go_left` &rarr; Moves the bot to the left  
 `square` &rarr; Moves the bot in a square pattern   
+`spin` &rarr; Moves the bot in a spin pattern  
 `motor_test` &rarr; Tests each wheel motor in turn  
 `clean_up` &rarr; Cleans up all the GPIO pins (should be updated to only clean motor pins)  
 `reset_pins`&rarr; Allows new pins to be used for motors  

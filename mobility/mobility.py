@@ -144,6 +144,13 @@ self -> reference to self object
         for i in range(0, 3):
             self.turn_right()
             self.forward()
+
+'''
+spin
+---------
+'''
+    def spin(self):
+        pass
 '''
 motor_test
 -----------

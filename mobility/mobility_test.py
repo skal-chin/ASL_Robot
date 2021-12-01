@@ -9,8 +9,10 @@ def usage():
         x -> exit
         f -> Move bot forward
         b -> Move bot backward
-        l -> Spin left
-        r -> Spin right
+        l -> go left
+        r -> go right
+        c -> square pattern
+        s -> spin pattern
         test -> Run test motor commmand
 
         ''')
@@ -42,11 +44,17 @@ def run_command(bot, command, duration=None):
             bot.backward(duration)
 
     elif command == 'l':
-        bot.turn_left()
-        
-    elif command == 'r':
-        bot.turn_right()
+        bot.go_left()
 
+    elif command == 'r':
+        bot.go_right()
+
+    elif command == 'c':
+        bot.square()
+
+    elif command == 's':
+        bot.spin()
+        
     else:
         print('Unrecognized command')
         usage()
