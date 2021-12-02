@@ -67,7 +67,7 @@ class Mobility():
 
     def backward(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.LOW)
-        GPIO.output(self.l_reverse, GPIO.HIGH
+        GPIO.output(self.l_reverse, GPIO.HIGH)
         GPIO.output(self.r_forward, GPIO.LOW)
         GPIO.output(self.r_reverse, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(duty)
