@@ -65,23 +65,9 @@ class Mobility():
         GPIO.output(self.l_forward, GPIO.LOW)
         GPIO.output(self.r_forward, GPIO.LOW)
 
-'''
-backward
-----------
-'''
-
     def backward(self, dur=2, duty=50):
         pass
 
-'''
-turn_right
------------
-Turns the bot 90 degrees to the right
-
-PARAMETERS
------------
-self -> reference to self object
-'''
 
     def turn_right(self):
         GPIO.output(self.l_forward, GPIO.HIGH)
@@ -96,70 +82,27 @@ self -> reference to self object
         GPIO.output(self.l_forward, GPIO.LOW)
         GPIO.output(self.r_reverse, GPIO.LOW)
 
-'''
-turn_left
-----------
-'''
 
     def turn_left(self):
         pass
 
-'''
-go_right
----------
-Turns the bot 90 degrees to the right and moves it forward, then reorientates
-
-PARAMETERS
-----------
-self -> reference to self object
-'''
 
     def go_right(self):
         self.turn_right()
         self.forward()
         self.turn_left()
 
-'''
-go_left
----------
-'''
-
     def go_left(self):
         pass
-
-'''
-square
----------
-Moves the bot in a square pattern
-
-PARAMETERS
-----------
-self -> reference to self object
-'''
 
     def square(self):
         for i in range(0, 3):
             self.turn_right()
             self.forward()
 
-'''
-spin
----------
-'''
-
     def spin(self):
         pass
 
-'''
-motor_test
------------
-Tests each motor, sequentially, to ensure each is working.
-
-PARAMETERS
------------
-self -> reference to self object
-dur -> duration each motor is running
-'''
 
     def motor_test(self, dur=1):
         GPIO.output(self.l_forward, GPIO.HIGH)
@@ -186,38 +129,11 @@ dur -> duration each motor is running
         GPIO.output(self.r_reverse, GPIO.LOW)
         self.r_pwm.ChangeDutyCycle(0)
 
-'''
-clean_up
-----------
-Stops the pwm motors and cleans of ALL of the pins.
-*NOTE*: this should be changed to only clean up the mobility motors
-
-PARAMETERS
-----------
-self -> reference to self object
-'''
-
     def clean_up(self):
         self.is_set = False
         self.l_pwm.stop()
         self.r_pwm.stop()
         GPIO.cleanup()
-
-'''
-reset_pins
------------
-Uses the self clean_up function to clean the pins and resets them to new pins
-
-PARAMETERS
-----------
-self -> reference to self object
-new_l_for -> new pin number for the left forward motor
-new_r_for -> new pin number for the right forward motor
-new_l_rev -> new pin number for the left reverse motor
-new_r_rev -> new pin number for the right reverse motor
-new_l_vel -> new pin number for the left pwm(velocity) motor
-new_r_vel -> new pin number for the right pwm(velocity) motor
-'''
 
     def reset_pins(self, new_l_for, new_r_for, new_l_rev, new_r_rev, new_l_vel, new_r_vel):
         self.clean_up()
