@@ -51,17 +51,6 @@ class Mobility():
         self.l_pwm.start(0)
         self.r_pwm.start(0)
 
-'''
-forward
-----------
-Moves the bot forward a distance based on velocity(duty) of bot and duration(dur) of movement.
-
-PARAMETERS
-----------
-self -> reference to self object
-dur -> duration of movement
-duty -> controls velocity of the bot
-'''
 
     def forward(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.HIGH)
