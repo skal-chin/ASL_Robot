@@ -13,7 +13,6 @@ def usage():
         r -> go right
         c -> square pattern
         s -> spin pattern
-        test -> Run test motor commmand
 
         ''')
 
@@ -54,7 +53,7 @@ def run_command(bot, command, duration=None):
 
     elif command == 's':
         bot.spin()
-        
+
     else:
         print('Unrecognized command')
         usage()

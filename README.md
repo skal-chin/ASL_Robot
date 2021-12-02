@@ -4,6 +4,15 @@
 
 This is a college course robotics project. Its purpose is to learn more about robotics, AI, mobility, computer vision, and decision making.
 
+## Requirements  
+
+**RPi.GPIO Module**: The mobility.py was designed with a Raspberry Pi in mind. If you intend to use this without a Pi, you will need to find a workaround for this package.  
+
+**Raspberry Pi**: This project was developed and tested using Raspberry Pi OS for the mobility testing,  
+
+**Skid-Steer Mobile Robot**: We used the Yahboom tank when designing this project, but any other skid-steer robot connected to a Pi should work.
+
+
 ## mobility.py
 
 ---
@@ -30,3 +39,18 @@ Contains the Mobility class that controls the hardcoded movements of the bot wit
 `motor_test` &rarr; Tests each wheel motor in turn  
 `clean_up` &rarr; Cleans up all the GPIO pins (should be updated to only clean motor pins)  
 `reset_pins`&rarr; Allows new pins to be used for motors  
+
+## mobility_test.py
+---
+
+Creates a mobility object based on the hardcoded GPIO numbers and allows the user to input a letter to test the movements.  
+
+**Commands**  
+`test` &rarr; Runs the motor_test function to test each motor.  
+`x` &rarr; Exits the program  
+`f` &rarr; Runs forward function  
+`b` &rarr; Runs backward function  
+`l` &rarr; Runs go_left function  
+`r` &rarr; Runs go_right function  
+`c` &rarr; Runs the square function  
+`s` &rarr; Runs the spin function  
