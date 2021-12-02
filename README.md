@@ -10,7 +10,7 @@ This is a college course robotics project. Its purpose is to learn more about ro
 
 **Raspberry Pi**: This project was developed and tested using Raspberry Pi OS for the mobility testing,  
 
-**Skid-Steer Mobile Robot**: We used the Yahboom Raspberry Pi G1 Tank when designing and testing this project, but any other skid-steer robot connected to a Pi should work.
+**Skid-Steer Mobile Robot**: We used the Yahboom Raspberry Pi G1 Tank when designing and testing this project. 
 
 
 ## mobility.py
