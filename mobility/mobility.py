@@ -96,7 +96,7 @@ class Mobility():
         pass
 
     def square(self):
-        for i in range(0, 3):
+        for i in range(0, 4):
             self.turn_right()
             self.forward()
 
