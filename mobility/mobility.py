@@ -62,6 +62,7 @@ self -> reference to self object
 dur -> duration of movement
 duty -> controls velocity of the bot
 '''
+
     def forward(self, dur=2, duty=50):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.l_reverse, GPIO.LOW)
@@ -74,10 +75,12 @@ duty -> controls velocity of the bot
 
         GPIO.output(self.l_forward, GPIO.LOW)
         GPIO.output(self.r_forward, GPIO.LOW)
+
 '''
 backward
 ----------
 '''
+
     def backward(self, dur=2, duty=50):
         pass
 
@@ -90,6 +93,7 @@ PARAMETERS
 -----------
 self -> reference to self object
 '''
+
     def turn_right(self):
         GPIO.output(self.l_forward, GPIO.HIGH)
         GPIO.output(self.l_reverse, GPIO.LOW)
@@ -107,6 +111,7 @@ self -> reference to self object
 turn_left
 ----------
 '''
+
     def turn_left(self):
         pass
 
@@ -119,6 +124,7 @@ PARAMETERS
 ----------
 self -> reference to self object
 '''
+
     def go_right(self):
         self.turn_right()
         self.forward()
@@ -128,6 +134,7 @@ self -> reference to self object
 go_left
 ---------
 '''
+
     def go_left(self):
         pass
 
@@ -140,6 +147,7 @@ PARAMETERS
 ----------
 self -> reference to self object
 '''
+
     def square(self):
         for i in range(0, 3):
             self.turn_right()
@@ -149,8 +157,10 @@ self -> reference to self object
 spin
 ---------
 '''
+
     def spin(self):
         pass
+
 '''
 motor_test
 -----------
@@ -161,6 +171,7 @@ PARAMETERS
 self -> reference to self object
 dur -> duration each motor is running
 '''
+
     def motor_test(self, dur=1):
         GPIO.output(self.l_forward, GPIO.HIGH)
         self.l_pwm.ChangeDutyCycle(20)
@@ -196,6 +207,7 @@ PARAMETERS
 ----------
 self -> reference to self object
 '''
+
     def clean_up(self):
         self.is_set = False
         self.l_pwm.stop()
@@ -217,6 +229,7 @@ new_r_rev -> new pin number for the right reverse motor
 new_l_vel -> new pin number for the left pwm(velocity) motor
 new_r_vel -> new pin number for the right pwm(velocity) motor
 '''
+
     def reset_pins(self, new_l_for, new_r_for, new_l_rev, new_r_rev, new_l_vel, new_r_vel):
         self.clean_up()
         GPIO.setmode(GPIO.BCM)
