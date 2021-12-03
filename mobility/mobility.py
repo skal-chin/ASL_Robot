@@ -123,17 +123,8 @@ class Mobility():
             self.forward()
 
     def spin(self):
-        GPIO.output(self.l_forward, GPIO.LOW)
-        GPIO.output(self.l_reverse, GPIO.HIGH)
-        GPIO.output(self.r_forward, GPIO.HIGH)
-        GPIO.output(self.r_reverse, GPIO.LOW)
-        self.l_pwm.ChangeDutyCycle(50)
-        self.r_pwm.ChangeDutyCycle(50)
-
-        sleep(.75)
-
-        GPIO.output(self.l_forward, GPIO.LOW)
-        GPIO.output(self.r_reverse, GPIO.LOW)
+        for i in range(0, 4):
+            self.turn_left()
 
 
     def motor_test(self, dur=1):
