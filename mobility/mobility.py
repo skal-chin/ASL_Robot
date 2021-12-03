@@ -103,8 +103,8 @@ class Mobility():
 
         sleep(.75)
 
-        GPIO.output(self.l_forward, GPIO.LOW)
-        GPIO.output(self.r_reverse, GPIO.LOW)
+        GPIO.output(self.l_reverse, GPIO.LOW)
+        GPIO.output(self.r_forward, GPIO.LOW)
 
 
     def go_right(self):
